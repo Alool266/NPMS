@@ -1,0 +1,18 @@
+server:
+  port: 13001
+
+spring:
+  application:
+    name: Eureka-server13001
+
+eureka:
+  instance:
+    hostname: eurekaServer13001
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://127.0.0.1:13000/eureka/,http://127.0.0.1:13002/eureka/
+

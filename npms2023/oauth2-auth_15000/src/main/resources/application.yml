@@ -1,0 +1,27 @@
+﻿server:
+  port: 15000
+
+spring:
+  application:
+    name: oauth2-auth
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/npms?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false&useUnicode=true&allowMultiQueries=true
+    username: root
+    password: 635489
+
+
+mybatis-plus:
+  mapper-locations: classpath:com/neu/emp/mapper/*.xml
+
+logging:
+  level:
+    com.neu: debug
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:13000/eureka/, http://127.0.0.1:13001/eureka/, http://127.0.0.1:13002/eureka/

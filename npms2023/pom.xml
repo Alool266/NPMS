@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.neu</groupId>
+    <artifactId>npms2021</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>eureka_server_13000</module>
+        <module>eureka_server_13001</module>
+        <module>eureka_server_13002</module>
+        <module>gateway_server_14000</module>
+        <module>oauth2-auth_15000</module>
+        <module>oauth2-api_16000</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <springboot.version>2.3.3.RELEASE</springboot.version>
+        <springcloud.version>Hoxton.SR9</springcloud.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!--boot 2.3.3 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+
+                <scope>import</scope>
+            </dependency>
+
+            <!--cloud hoxton.sr9 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
